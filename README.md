@@ -57,7 +57,7 @@ kubectl config use-context dev
 5. **Run Jenkins Pipeline**
 
 ---
-
+## Automation Flow
 ```mermaid
 graph LR
 A[Push code to GitHub] --> B[Jenkins triggers build]
