@@ -46,15 +46,18 @@ docker compose up -d
 
 6. **Setup KinD:**
 
-
 ```bash
 kind create cluster --name dev
 kubectl config use-context dev
 ```
 
-4. **Install Argo CD via Operator or Helm and configure it**
-   
-5. **Run Jenkins Pipeline**
+7. **Install Argo CD via Operator or Helm and configure it**
+   - Use admin as username run this command to get the password and login - `kubectl -n argocd get secret example-argocd-cluster -o jsonpath="{.data.admin\.password}" | base64 -d && echo`
+   - Create new app and name of the app
+   - Select SYNC Policy to Automatic
+   - Add source git URL and path
+   - Add destination cluster URL and namespace and click Create
+8. **Run Jenkins Pipeline**
 
 ---
 ## Automation Flow
@@ -70,6 +73,10 @@ G --> H[Argo CD detects change]
 H --> I[Deploy to KinD cluster]
 ```
 ---
+## 📌 Notes
+
+- This setup runs entirely on your **local machine using Docker + WSL2 + KinD**.
+- It is recommended to use seperate CI/CD manifest repo, since this is a demo project I have used in same repo. 
 
 ## Inspiration & Credits
 
