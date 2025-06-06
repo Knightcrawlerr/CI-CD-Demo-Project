@@ -57,7 +57,7 @@ kubectl config use-context dev
 5. **Run Jenkins Pipeline**
 
 ---
----
+
 ```mermaid
 graph LR
 A[Push code to GitHub] --> B[Jenkins triggers build]
@@ -69,8 +69,6 @@ F --> G[Push YAML to GitHub]
 G --> H[Argo CD detects change]
 H --> I[Deploy to KinD cluster]
 ```
----
-
 ---
 
 ## Inspiration & Credits
