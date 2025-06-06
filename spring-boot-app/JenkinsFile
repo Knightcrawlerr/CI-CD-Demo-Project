@@ -54,7 +54,7 @@ pipeline {
                     git config user.email "me@me.com"
                     git config user.name "Knightcrawlerr"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sh "sed -i 's|image: abhishekf5/ultimate-cicd:.*|image: abhishekf5/ultimate-cicd:${BUILD_NUMBER}|' spring-boot-app-manifests/deployment.yml"
+                    sh "sed -i 's|image: hacking9/ultimate-cicd:.*|image: hacking9/ultimate-cicd:${BUILD_NUMBER}|' spring-boot-app-manifests/deployment.yml"
 		    git add spring-boot-app-manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
