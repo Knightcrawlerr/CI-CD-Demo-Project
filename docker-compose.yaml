@@ -1,6 +1,6 @@
 services:
   jenkins:
-    image: jenkins/jenkins:lts
+    image: hacking9/jenkins-docker-agent:v1
     ports:
       - "8080:8080"
     volumes:
